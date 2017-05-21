@@ -1,6 +1,10 @@
 #!/bin/bash
 
-YourName=`ssm get-parameters --names ECSYourName --query 'Parameters[0].Value' --output text 2>/dev/null` 
+az=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
+region=${az%%[a-z]}
+
+YourName=`aws --region ${region} ssm get-parameters --names ECSYourName --query 'Parameters[0].Value' --output text 2>/dev/null` 
+
 if [ -z ${YourName} ]; then 
 	YourName="##Undefinied##"
 fi
