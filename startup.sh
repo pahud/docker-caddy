@@ -23,7 +23,7 @@ cat > /srv/greeting.html <<EOF
 <p>
 <h1>Hi ${YourName}!</h1>
 <p>
-<code>Your password is ${YourPassword}!</code>
+<h2>Your password is ${YourPassword}!</h2>
 EOF
 
 /usr/bin/caddy --conf /etc/Caddyfile --log stdout
