@@ -14,6 +14,6 @@ WORKDIR /srv
 
 EXPOSE 2015
 
-ENTRYPOINT 
+ENTRYPOINT []
 
 CMD ["/startup.sh"]
